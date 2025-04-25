@@ -2,6 +2,11 @@ import mesop as me
 from typing import Literal, Optional, Tuple, Any
 from pydantic.dataclasses import dataclass
 import dataclasses
+import sys
+import os
+
+# Add the proper path to access common types
+sys.path.append(os.path.join(os.path.dirname(__file__), '../../../samples/python'))
 from common.types import Task, Message
 from service.types import Conversation, Event
 

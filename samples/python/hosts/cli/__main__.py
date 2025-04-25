@@ -1,7 +1,12 @@
+import os
+import sys
+# Get the path to A2A/samples/python
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(base_path)
+
 import asyncclick as click
 import asyncio
 import base64
-import os
 import urllib
 from uuid import uuid4
 
