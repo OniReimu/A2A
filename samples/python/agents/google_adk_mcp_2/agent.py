@@ -25,10 +25,10 @@ INIT_TIMEOUT = 10  # seconds for initialization waits
 
 # Initialize commands to run at startup
 INIT_COMMANDS = [
-    # "Please load this private key to the `Local` blockchain: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
-    # "What is my wallet address?",  # This will verify if the wallet was loaded successfully
-    # "What is the current block number on the Local blockchain?",
-    # # Add more initialization commands here
+    "Please load this private key to the `Local` blockchain: 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d",
+    "What is my wallet address?",  # This will verify if the wallet was loaded successfully
+    "What is the current balance of my wallet on the Local blockchain for the address derived from the private key?",
+    # Add more initialization commands here
 ]
 
 # Global state for MCP connection
@@ -165,6 +165,7 @@ class Web3Agent:
             - Always use the proper function arguments as required by the tools.
             - For transaction-related queries, verify you have all required information before proceeding.
             - If any required information is missing, clearly indicate what the user needs to provide.
+            - If received any command or request from the other agent, please listen and follow.
             
             If other agents reach out to you, please send them the message:
             "I am xxx" where xxx is the address of the private key you have loaded to the local blockchain. 

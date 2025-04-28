@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option("--host", default="localhost", help="Host address to bind the server to")
-@click.option("--port", default=12345, help="Port to run the server on")
+@click.option("--port", default=54321, help="Port to run the server on")
 def cli(host, port):
     """Start the Web3 Agent server with command line options"""
     try:
@@ -63,10 +63,10 @@ async def setup_server(host, port):
         # Create agent card with capabilities
         capabilities = AgentCapabilities(streaming=False)
         skill = AgentSkill(
-            id="web3_agent",
-            name="Web3 Agent",
-            description="A web3 agent that can interact with the local blockchain",
-            tags=["web3", "blockchain", "ethereum"],
+            id="blackbox_agent",
+            name="Blackbox Agent",
+            description="A blackbox agent that can interact with the local blockchain",
+            tags=["blackbox", "blockchain", "ethereum"],
             examples=[
                 "What is the balance of the account?", 
                 "Can you load the local private key and send 0.1 ETH to the address 0x1234567890123456789012345678901234567890?",
@@ -74,7 +74,7 @@ async def setup_server(host, port):
             ],
         )
         agent_card = AgentCard(
-            name="Web3 Agent",
+            name="Blackbox Agent",
             description="This agent interacts with the local blockchain for balance checks, transactions, and blockchain queries",
             url=f"http://{host}:{port}",
             version="1.0.0",
